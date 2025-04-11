@@ -7,13 +7,8 @@ from keep_alive import keep_alive
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-SP500_SYMBOLS = [
-    'AAPL', 'MSFT', 'AMZN', 'GOOGL', 'META', 'TSLA', 'NVDA', 'BRK.B', 'JPM', 'JNJ',
-    'V', 'PG', 'XOM', 'UNH', 'MA', 'HD', 'CVX', 'ABBV', 'LLY', 'PEP', 'KO', 'MRK',
-    'AVGO', 'BAC', 'TMO', 'DIS', 'PFE', 'CSCO', 'ADBE', 'WMT', 'CRM', 'CMCSA', 'ABT',
-    'MCD', 'NFLX', 'ACN', 'DHR', 'NKE', 'INTC', 'COST', 'VZ', 'TXN', 'NEE', 'LIN',
-    'BMY', 'MDT', 'UNP', 'HON', 'AMGN'
-]
+SP500_SYMBOLS = ['AAPL', 'MSFT', 'AMZN', 'GOOGL', 'META', 'TSLA', 'NVDA', 'BRK.B', 'JPM', 'JNJ', 'V', 'PG', 'XOM', 'UNH', 'MA', 'HD', 'CVX', 'ABBV', 'LLY', 'PEP', 'KO', 'MRK', 'AVGO', 'BAC', 'TMO', 'DIS', 'PFE', 'CSCO', 'ADBE', 'WMT', 'CRM', 'CMCSA', 'ABT', 'MCD', 'NFLX', 'ACN', 'DHR', 'NKE', 'INTC', 'COST', 'VZ', 'TXN', 'NEE', 'LIN', 'BMY', 'MDT', 'UNP', 'HON', 'AMGN', 'LOW', 'QCOM', 'BA', 'UPS', 'PM', 'AMAT', 'SBUX', 'ISRG', 'RTX', 'IBM', 'INTU', 'CAT', 'GE', 'LMT', 'MDLZ', 'GILD', 'NOW', 'SPGI', 'CVS', 'EL', 'BLK', 'DE', 'SYK', 'ADI', 'CI', 'VRTX', 'TGT', 'ZTS', 'MO', 'TFC', 'MU', 'BDX', 'SCHW', 'ADP', 'MMC', 'TJX', 'PNC', 'BKNG', 'CL', 'CB', 'C', 'REGN', 'GM', 'ICE', 'FDX', 'HCA', 'APD', 'SO', 'PLD', 'DUK', 'AON', 'NSC', 'SHW', 'ITW', 'BSX', 'D', 'EW', 'FISV', 'PSA', 'SLB', 'EMR', 'PGR', 'EOG', 'MCK', 'WM', 'ETN', 'GD', 'MNST', 'AZO', 'AIG', 'AEP', 'CSX', 'ADI', 'ORLY', 'MCO', 'IDXX', 'ADSK', 'ROST', 'TRV', 'CDNS', 'FTNT', 'MS', 'KHC', 'COF', 'DXCM', 'SRE', 'ATVI', 'AFL', 'CTSH', 'ILMN', 'KLAC', 'WBA', 'ROK', 'A', 'PCAR', 'WELL', 'OTIS', 'MAR', 'HSY', 'DLR', 'WMB', 'EA', 'ANSS', 'PH', 'CHTR', 'BIIB', 'VRSK', 'CTAS', 'HUM', 'XEL', 'MTD', 'F', 'ECL', 'CMG', 'DOW', 'HAL', 'WST', 'PRU', 'CNC', 'PAYX', 'KEYS', 'NOC', 'PPL', 'PEG', 'LHX', 'ALL', 'XYL', 'RMD', 'HIG', 'SBAC', 'STZ', 'EFX', 'AVB', 'BKR', 'DLTR', 'TSCO', 'AMP', 'NUE', 'HPQ', 'FRC', 'APA', 'ALB', 'LEN', 'GPN', 'ZBRA', 'VLO', 'CF', 'CAG', 'MTB', 'INCY', 'GLW', 'MLM', 'STT', 'EXR', 'FAST', 'BAX', 'TEL', 'PKI', 'TSN', 'EXPD', 'CNP', 'FMC', 'TTWO', 'VTRS', 'NDAQ', 'NTRS', 'CAH', 'CINF', 'AES', 'AKAM', 'IFF', 'SWKS', 'VFC', 'MOS', 'HOLX', 'IRM', 'WRB', 'MKTX', 'KEY', 'NTAP', 'FLT', 'ZION', 'L', 'WRK', 'PTC', 'NRG', 'HPE', 'DXC', 'TECH', 'BEN', 'UHS', 'AIZ', 'TAP', 'NWL', 'BBWI', 'KIM', 'RCL', 'GNRC', 'BXP', 'MAS', 'NWS', 'AAL', 'ALK', 'HAS', 'DVA', 'FRT', 'LNC', 'ROL', 'ALLE', 'BIO', 'LW', 'TPR', 'FOX', 'FOXA', 'CPB', 'PNW', 'SEE', 'APA', 'NWSA', 'XRAY', 'PVH', 'HBAN', 'DXC', 'CMA', 'RHI', 'WHR', 'IPG', 'IVZ', 'NRG', 'OGN', 'JBHT', 'CHRW', 'NI', 'PARA', 'K', 'REG', 'AOS', 'PBCT', 'MHK', 'RE', 'RL']
+
 
 def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
