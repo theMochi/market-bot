@@ -90,10 +90,6 @@ schedule.every().friday.at("00:00").do(send_market_close_message)
 
 keep_alive()
 
-
-send_telegram_message("📢 Test message from Render is working!")
-
-
 while True:
     schedule.run_pending()
     time.sleep(30)
